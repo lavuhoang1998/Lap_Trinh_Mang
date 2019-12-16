@@ -1,0 +1,16 @@
+CC = gcc
+CFLAGS  = -Wall
+TARGET_1 = server
+TARGET_2 = client
+EXTENSION = _w3e1.c
+
+all: $(TARGET_1) $(TARGET_2)
+
+$(TARGET_1): $(TARGET_1)$(EXTENSION)
+	$(CC) $(CFLAGS) -o $(TARGET_1) $(TARGET_1)$(EXTENSION)
+
+$(TARGET_2): $(TARGET_2)$(EXTENSION)
+	$(CC) $(CFLAGS) -o $(TARGET_2) $(TARGET_2)$(EXTENSION)
+
+clean:
+	$(RM) $(TARGET_1) $(TARGET_2) *.o
